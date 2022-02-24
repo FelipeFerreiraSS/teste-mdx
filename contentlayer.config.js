@@ -1,4 +1,4 @@
-import { makeSource } from "contentlayer/source-files"
+import { defineDocumentType, makeSource } from "contentlayer/source-files"
 
 const computedFields = {
     slug: {
@@ -9,10 +9,11 @@ const computedFields = {
 
 const Post = defineDocumentType(() => ({
     name: 'Post',
-    filePathPattern: 'blog/*.mdx',
+    filePathPattern: 'posts/*.mdx',
     bodyType: 'mdx',
     fields: {
-        tile: { type: 'string', require: true }
+        tile: { type: 'string', require: true },
+        
     },
     computedFields
 }))
