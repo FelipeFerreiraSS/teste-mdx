@@ -2,7 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import { allPosts } from "../.contentlayer/generated/allPosts.mjs"
+
+export default function Home(props) {
+  console.log(props.posts)
   return (
     <div className={styles.container}>
       <Head>
@@ -66,4 +69,14 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const posts = allPosts
+  console.log(posts)
+  return {
+    props: {
+      posts,
+    }
+  }
 }
