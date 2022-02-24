@@ -12,8 +12,9 @@ const Post = defineDocumentType(() => ({
     filePathPattern: 'posts/*.mdx',
     bodyType: 'mdx',
     fields: {
-        tile: { type: 'string', require: true },
-        
+        title: { type: 'string', require: true },
+        date: { type: 'string', require: true },
+        resume: { type: 'string', require: true }
     },
     computedFields
 }))
