@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "contentlayer": "^0.1.1",
+    "markdown-it": "^12.3.2",
     "next": "12.0.10",
     "next-contentlayer": "^0.1.1",
     "react": "17.0.2",

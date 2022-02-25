@@ -2,13 +2,21 @@ import styles from '../../styles/Home.module.css'
 
 import { allPosts } from "../../.contentlayer/generated/allPosts.mjs"
 import Link from 'next/link'
-import { useMDXComponent } from 'next-contentlayer/hooks' 
-const React = require('react')
+//import { useMDXComponent } from 'next-contentlayer/hooks' 
+
+import MarkdownIt from 'markdown-it'
 
 
 const BlogPost = ({ post }) => {
     console.log(post)
     //const Component = useMDXComponent(post.body.html)
+
+    const md = new MarkdownIt({
+        html: true
+    })
+
+    const htmlTexto = md.render(post.body.html) 
+
     return (
         <>
             <main>
@@ -19,7 +27,7 @@ const BlogPost = ({ post }) => {
                 </button>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.description}>{post.date}</p>
-                
+                <section dangerouslySetInnerHTML={{__html: htmlTexto}}></section>
             </main>
         </>
     )
