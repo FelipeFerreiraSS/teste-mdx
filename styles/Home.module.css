@@ -2,6 +2,19 @@
   padding: 0 2rem;
 }
 
+.section {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section > pre {
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+  background-color: rgb(26, 25, 25);
+  color: #eaeaea;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;

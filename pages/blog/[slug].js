@@ -26,7 +26,7 @@ const BlogPost = ({ post }) => {
                 </button>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.description}>{post.date}</p>
-                <section dangerouslySetInnerHTML={{__html: htmlTexto}}></section>
+                <section className={styles.section} dangerouslySetInnerHTML={{__html: htmlTexto}}></section>
             </main>
         </>
     )
