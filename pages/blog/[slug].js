@@ -14,7 +14,7 @@ const BlogPost = ({ post }) => {
         html: true
     })
 
-    const htmlTexto = md.render(post.body.html) 
+    const htmlText = md.render(post.body.html) 
 
     return (
         <>
@@ -26,7 +26,12 @@ const BlogPost = ({ post }) => {
                 </button>
                 <h1 className={styles.title}>{post.title}</h1>
                 <p className={styles.description}>{post.date}</p>
-                <section className={styles.section} dangerouslySetInnerHTML={{__html: htmlTexto}}></section>
+                <section 
+                    className={styles.section} 
+                    dangerouslySetInnerHTML={{__html: htmlText}}
+                >
+
+                </section>
             </main>
         </>
     )
